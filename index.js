@@ -1,26 +1,21 @@
 /*Dificultad:  🟢🟡
- 
-3- Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”. Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -.
-
-Nota: usar confirm() https://www.w3schools.com/jsref/met_win_confirm.asp
+4- Realiza un script que pida números hasta que se pulse “cancelar”.
+ Si no es un número deberá indicarse con un «alert» y seguir pidiendo números.
+ Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
  */
 
-let cadenaDeTexto = prompt(`Ingresa cualquier texto`);
-if (cadenaDeTexto !== null) {
-  let nuevaCadenaDeTexto = confirm(
-    `Apreta "Aceptar" para agregar un nuevo texto \nApreta "Cancelar" para concatenar los textos que ingresaste`,
-  );
-  while (nuevaCadenaDeTexto) {
-    let nuevoTexto = prompt("Ingresa un nuevo texto");
-    if (nuevoTexto === null) {
-      break;
-    }
-    cadenaDeTexto += "-" + nuevoTexto;
-    nuevaCadenaDeTexto = confirm(
-      `Apreta "Aceptar" para agregar un nuevo texto \nApreta "Cancelar" para concatenar los textos que ingresaste`,
-    );
+let pedirNumeros = prompt(`Ingresa un número`);
+let sumaTotalDeNumeros = 0;
+
+while (pedirNumeros !== null) {
+  if (pedirNumeros.trim() === "" || isNaN(pedirNumeros)) {
+    alert(`Ingresaste un valor erroneo, intentalo nuevamente`);
+  } else {
+    sumaTotalDeNumeros += Number(pedirNumeros);
   }
-  document.write(cadenaDeTexto);
-} else {
-  document.write("No ingresaste ningun texto");
+  pedirNumeros = prompt(
+    "Ingresa otro número o presiona Cancelar para finalizar",
+  );
 }
+
+alert(`La suma total de los números ingresados es ${sumaTotalDeNumeros}`);
