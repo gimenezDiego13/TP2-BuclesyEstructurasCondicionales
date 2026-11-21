@@ -1,27 +1,34 @@
 /*
-Dificultad:  🟢🟡
-8- Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50) 
+Dificultad:  🟢🟡🔴
+9- Crea un script que escriba los números del 1 al 500, que indique cuáles son múltiplos de 4 y de 9 y que cada 5 líneas muestre una línea horizontal. Por ejemplo :
 
 1
-12
-123
-1234
-12345
-123456
-……
+2
+3
+4 (Múltiplo de 4)
+5-
+————————————————————-
+
+6
+7
+8 (Múltiplo de 4)
+9 (Múltiplo de 9)
+10
+
 
 */
 
-let ingresarNumero = parseInt(prompt(`Ingresa un número no mayor de 50`));
+for (let num = 1; num <= 500; num++) {
+  document.write(num + "\n");
 
-while (ingresarNumero > 50 || ingresarNumero <= 0 || isNaN(ingresarNumero)) {
-  alert("Ingresaste un número invalido");
-  ingresarNumero = parseInt(prompt(`Ingresa un número no mayor a 50`));
-}
-
-for (let i = 1; i <= ingresarNumero; i++) {
-  for (let v = 1; v <= i; v++) {
-    document.write(v);
+  if (num % 4 === 0) {
+    document.write("(Múltiplo de 4)");
+  }
+  if (num % 9 === 0) {
+    document.write("(Múltiplo de 9)");
+  }
+  if (num % 5 === 0) {
+    document.write("<hr>");
   }
   document.write("<br>");
 }
