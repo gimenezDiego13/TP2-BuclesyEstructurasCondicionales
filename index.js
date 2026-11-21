@@ -1,27 +1,27 @@
 /*
 Dificultad:  🟢🟡
-7- Haz un script que escriba una pirámide inversa de los números del 1 al número que indique el usuario (no mayor de 50)  de la siguiente forma : (suponiendo que indica 30).
+8- Crea script para generar pirámide siguiente con los números del 1 al número que indique el usuario (no mayor de 50) 
 
-303030303030303030303030303030303030303030303030303030303030
-2929292929292929292929292929292929292929292929292929292929
-28282828282828282828282828282828282828282828282828282828
-…..
-333
-22
 1
+12
+123
+1234
+12345
+123456
+……
 
 */
 
-let ingresarNumero = parseInt(prompt("Ingresa un número no mayor de 50"));
+let ingresarNumero = parseInt(prompt(`Ingresa un número no mayor de 50`));
 
-while (ingresarNumero > 50 || isNaN(ingresarNumero) || ingresarNumero <= 0) {
-  alert(`Ingresaste un valor erroneo, intentalo nuevamente`);
-  ingresarNumero = parseInt(prompt("Ingresa un número no mayor de 50"));
+while (ingresarNumero > 50 || ingresarNumero <= 0 || isNaN(ingresarNumero)) {
+  alert("Ingresaste un número invalido");
+  ingresarNumero = parseInt(prompt(`Ingresa un número no mayor a 50`));
 }
 
-for (let i = ingresarNumero; i >= 1; i--) {
-  for (let v = i; v >= 1; v--) {
-    document.write(i);
+for (let i = 1; i <= ingresarNumero; i++) {
+  for (let v = 1; v <= i; v++) {
+    document.write(v);
   }
   document.write("<br>");
 }
